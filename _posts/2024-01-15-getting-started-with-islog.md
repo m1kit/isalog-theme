@@ -146,7 +146,7 @@ You can use various text formatting options:
 - *Italic text* for subtle emphasis  
 - ~~Strikethrough~~ for corrections
 - `Inline code` for technical terms
-- [Links to other pages](./another-page.html) are nicely styled
+- [Links to other pages](/about/) are nicely styled
 
 ## Lists and Organization
 
@@ -185,4 +185,4 @@ The theme also supports well-styled tables:
 
 The islog theme provides a comprehensive dark blogging experience with modern typography, excellent code highlighting, and thoughtful design details. Whether you're writing technical tutorials, personal reflections, or creative content, this theme will present your work beautifully.
 
-Ready to start blogging with islog? Check out the [documentation](../README.md) for setup instructions!
+Ready to start blogging with islog? Check out the documentation in the README file for setup instructions!
