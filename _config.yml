@@ -1,5 +1,8 @@
-title: Cayman theme
-description: Cayman is a clean, responsive theme for GitHub Pages.
+title: islog theme
+description: islog is a clean, responsive dark theme for Jekyll blogs.
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-cayman
+theme: jekyll-theme-islog
+
+# Tag page generation
+tag_dir: tags

@@ -1,6 +1,53 @@
-_site
-.sass-cache
-Gemfile.lock
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Gems
 *.gem
-.jekyll-cache
-.jekyll-cache
+Gemfile.lock
+
+# Bundler
+.bundle/
+vendor/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+.tmp/
+tmp/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Node modules (if using npm for any tooling)
+node_modules/
+
+# Ruby version files
+.ruby-version
+.rbenv-version
+
+# Coverage reports
+coverage/

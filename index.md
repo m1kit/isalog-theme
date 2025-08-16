@@ -2,122 +2,59 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# Welcome to islog
 
-[Link to another page](./another-page.html).
+This is a dark, modern Jekyll theme designed for blogs with excellent typography and readability.
 
-There should be whitespace between paragraphs.
+## Recent Posts
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+{% if site.posts.size > 0 %}
+  <div class="post-list">
+    {% for post in site.posts limit:5 %}
+      <article class="post-item">
+        <h3 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        <div class="post-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%B %d, %Y" }}
+          </time>
+          {% if post.author %}
+            <span class="post-author">by {{ post.author }}</span>
+          {% endif %}
+        </div>
+        {% if post.excerpt %}
+          <div class="post-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </div>
+        {% endif %}
+        <div class="post-tags">
+          {% for tag in post.tags limit:3 %}
+            <a href="/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
 
-# Header 1
+  {% if site.posts.size > 5 %}
+    <div class="view-all-posts">
+      <a href="/archive" class="btn-link">View All Posts →</a>
+    </div>
+  {% endif %}
+{% else %}
+  <div class="no-posts">
+    <p>No posts yet. Create your first post in the <code>_posts</code> directory.</p>
+    <p>Posts should be named with the format: <code>YYYY-MM-DD-title.md</code></p>
+  </div>
+{% endif %}
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+## About
 
-## Header 2
+This theme features:
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+- **Dark theme** with professional color palette
+- **Modern typography** using Open Sans and Japanese fonts
+- **Syntax highlighting** with Solarized Dark theme
+- **Responsive design** that works on all devices
+- **Clean, readable layout** focused on content
