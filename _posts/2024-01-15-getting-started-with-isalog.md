@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Getting Started with the islog Dark Theme"
+title: "Getting Started with the isalog Dark Theme"
 date: 2024-01-15 10:30:00 +0000
 author: "Theme Developer"
 tags: [jekyll, theme, dark-mode, tutorial]
 ---
 
-Welcome to **islog**, a modern dark theme for Jekyll blogs! This post demonstrates the beautiful typography and code highlighting capabilities of this theme.
+Welcome to **isalog**, a modern dark theme for Jekyll blogs! This post demonstrates the beautiful typography and code highlighting capabilities of this theme.
 
 ## Why Choose a Dark Theme?
 
@@ -183,6 +183,6 @@ The theme also supports well-styled tables:
 
 ## Conclusion
 
-The islog theme provides a comprehensive dark blogging experience with modern typography, excellent code highlighting, and thoughtful design details. Whether you're writing technical tutorials, personal reflections, or creative content, this theme will present your work beautifully.
+The isalog theme provides a comprehensive dark blogging experience with modern typography, excellent code highlighting, and thoughtful design details. Whether you're writing technical tutorials, personal reflections, or creative content, this theme will present your work beautifully.
 
-Ready to start blogging with islog? Check out the documentation in the README file for setup instructions!
+Ready to start blogging with isalog? Check out the documentation in the README file for setup instructions!

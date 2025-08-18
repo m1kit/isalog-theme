@@ -1,8 +1,8 @@
 {
-  "name": "jekyll-theme-islog",
+  "name": "jekyll-theme-isalog",
   "version": "0.2.0",
   "type": "module",
-  "description": "islog is a clean, responsive dark theme for Jekyll blogs",
+  "description": "isalog is a clean, responsive dark theme for Jekyll blogs",
   "scripts": {
     "dev": "vite",
     "build:js": "vite build",

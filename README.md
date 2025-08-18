@@ -1,17 +1,17 @@
-# The islog theme
+# The isalog theme
 
-*islog is a dark Jekyll theme for blogs, forked from the Cayman theme. You can [use it today](#usage) for your Jekyll blog.*
+*isalog is a dark Jekyll theme for blogs, forked from the Cayman theme. You can [use it today](#usage) for your Jekyll blog.*
 
-![Thumbnail of islog](thumbnail.png)
+![Thumbnail of isalog](thumbnail.png)
 
 ## Usage
 
-To use the islog theme:
+To use the isalog theme:
 
 1. Add the following to your site's `_config.yml`:
 
     ```yml
-    remote_theme: your-username/islog-theme
+    remote_theme: your-username/isalog-theme
     plugins:
     - jekyll-remote-theme # add this line to the plugins list if you already have one
     ```
@@ -26,7 +26,7 @@ To use the islog theme:
 
 ### Configuration variables
 
-islog will respect the following variables, if set in your site's `_config.yml`:
+isalog will respect the following variables, if set in your site's `_config.yml`:
 
 ```yml
 title: [The title of your site]
@@ -50,7 +50,7 @@ If you'd like to add your own custom styles:
     ---
     ---
 
-    @import "jekyll-theme-islog";
+    @import "jekyll-theme-isalog";
     ```
 3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
 

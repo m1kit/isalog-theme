@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |s|
-  s.name          = "jekyll-theme-islog"
-  s.version       = "0.2.0"
+  s.name          = "jekyll-theme-isalog"
+  s.version       = "1.0.0"
   s.license       = "CC0-1.0"
-  s.authors       = ["Jason Long", "GitHub, Inc."]
-  s.email         = ["opensource+jekyll-theme-cayman@github.com"]
-  s.homepage      = "https://github.com/pages-themes/cayman"
-  s.summary       = "islog is a dark Jekyll theme for blogs"
+  s.authors       = ["m1kit", "Jason Long", "GitHub, Inc."]
+  s.email         = ["me@mikit.dev"]
+  s.homepage      = "https://isalog.mikit.dev"
+  s.summary       = "isalog is a dark Jekyll theme for blogs"
 
   s.files         = `git ls-files -z`.split("\x0").select do |f|
     f.match(%r{^((_includes|_layouts|_sass|assets)/|(LICENSE|README)((\.(txt|md|markdown)|$)))}i)

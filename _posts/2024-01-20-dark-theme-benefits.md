@@ -42,7 +42,7 @@ When implementing dark themes, consider:
 }
 ```
 
-## The islog Approach
+## The isalog Approach
 
 This theme demonstrates best practices:
 

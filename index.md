@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Welcome to islog
+# Welcome to isalog
 
 This is a dark, modern Jekyll theme designed for blogs with excellent typography and readability.
 

@@ -13,4 +13,4 @@ bundle exec jekyll build
 bundle exec htmlproofer ./_site --check-html --url-ignore '/fonts.gstatic.com/,/fonts.googleapis.com/'
 bundle exec rubocop -D --config .rubocop.yml
 bundle exec script/validate-html
-gem build jekyll-theme-islog.gemspec
+gem build jekyll-theme-isalog.gemspec

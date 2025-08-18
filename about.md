@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-# About islog
+# About isalog
 
 This is a modern dark theme for Jekyll blogs, forked from the Cayman theme. It features beautiful typography, syntax highlighting, and responsive design.
 

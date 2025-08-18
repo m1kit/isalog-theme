@@ -6,11 +6,11 @@ author: "デザイナー"
 tags: [typography, japanese, design, fonts]
 ---
 
-このポストでは、islogテーマの**多言語対応**と美しいタイポグラフィについて紹介します。English and Japanese text can coexist beautifully in this theme.
+このポストでは、isalogテーマの**多言語対応**と美しいタイポグラフィについて紹介します。English and Japanese text can coexist beautifully in this theme.
 
 ## フォントの選択について
 
-The islog theme carefully selects fonts to ensure excellent readability in both languages:
+The isalog theme carefully selects fonts to ensure excellent readability in both languages:
 
 ### 英語フォント (English Fonts)
 - **Open Sans**: Clean, modern, and highly readable
@@ -44,7 +44,7 @@ class BlogPost:
 
 # 使用例
 post = BlogPost(
-    title="islogテーマの紹介", 
+    title="isalogテーマの紹介", 
     content="このテーマは日本語と英語の両方に対応しています。",
     language="ja"
 )
@@ -68,7 +68,7 @@ When writing technical documentation, it's important that both English technical
 ```javascript
 // 日本語コメントとEnglish code
 const blogConfig = {
-    siteName: "islogブログ",
+    siteName: "isalogブログ",
     description: "A beautiful dark theme for Jekyll",
     language: "ja", // 主要言語
     fallbackLang: "en", // フォールバック言語
@@ -138,7 +138,7 @@ default_lang: "ja"
 
 ## まとめ
 
-islogテーマは、日本語と英語の**両言語**に対応した美しいダークテーマです。The careful font selection and color scheme ensure that content in both languages looks professional and is easy to read.
+isalogテーマは、日本語と英語の**両言語**に対応した美しいダークテーマです。The careful font selection and color scheme ensure that content in both languages looks professional and is easy to read.
 
 Whether you're writing technical tutorials, personal blogs, or documentation, このテーマがあなたのコンテンツを美しく表現します。
 
