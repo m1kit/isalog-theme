@@ -30,7 +30,7 @@ This is a dark, modern Jekyll theme designed for blogs with excellent typography
         {% endif %}
         <div class="post-tags">
           {% for tag in post.tags limit:3 %}
-            <a href="/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+            <a href="/tags/#{{ tag | slugify }}" class="tag">{{ tag }}</a>
           {% endfor %}
         </div>
       </article>
