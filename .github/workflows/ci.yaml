@@ -12,7 +12,11 @@ jobs:
         with:
           ruby-version: 3.2
           bundler-cache: true
-      - name: build
-        run: script/bootstrap
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
       - name: test
         run: script/cibuild
