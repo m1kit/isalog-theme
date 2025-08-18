@@ -1,0 +1,21 @@
+{
+  "name": "jekyll-theme-islog",
+  "version": "0.2.0",
+  "description": "islog is a clean, responsive dark theme for Jekyll blogs",
+  "scripts": {
+    "dev": "vite",
+    "build:js": "vite build",
+    "build": "npm run build:js && bundle exec jekyll build",
+    "serve": "npm run build:js && bundle exec jekyll serve --host 0.0.0.0 --port 4001",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/three": "^0.155.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.4.19",
+    "vite-plugin-ruby": "^5.1.1"
+  },
+  "dependencies": {
+    "three": "^0.155.0"
+  }
+}

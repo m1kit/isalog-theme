@@ -44,6 +44,23 @@ tmp/
 
 # Node modules (if using npm for any tooling)
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vite build outputs
+assets/dist/
+dist/
+.vite/
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+
+# Package manager lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # Ruby version files
 .ruby-version

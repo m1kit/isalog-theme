@@ -2,6 +2,13 @@
 
 set -e
 
+# TypeScript type checking
+npx tsc --noEmit
+
+# Build JavaScript assets
+npm run build:js
+
+# Jekyll build and validation
 bundle exec jekyll build
 bundle exec htmlproofer ./_site --check-html --check-sri --url-ignore '/fonts.gstatic.com/'
 bundle exec rubocop -D --config .rubocop.yml
