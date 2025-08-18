@@ -38,5 +38,5 @@ git fetch -t origin
 
 # Tag it and bag it.
 
-gem push jekyll-theme-isalog-*.gem && git tag "$tag" &&
-  git push origin main && git push origin "$tag"
+git tag "$tag" && git push origin main && git push origin "$tag"
+echo "Release tagged and pushed. Gem file: jekyll-theme-isalog-*.gem"
