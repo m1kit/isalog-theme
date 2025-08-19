@@ -1,0 +1,21 @@
+{% comment %}
+  Include for displaying images with captions
+  Usage: {% include image.html src="/path/to/image.jpg" alt="Alt text" caption="Caption text" %}
+  
+  Parameters:
+  - src (required): Image source path
+  - alt (required): Alt text for accessibility
+  - caption (optional): Caption text displayed below image
+  - class (optional): Additional CSS classes for styling
+  - width (optional): Max width constraint
+{% endcomment %}
+
+<figure class="image-figure{% if include.class %} {{ include.class }}{% endif %}"{% if include.width %} style="max-width: {{ include.width }};"{% endif %}>
+  <img src="{{ include.src | relative_url }}" 
+       alt="{{ include.alt }}"
+       {% if include.width %}style="max-width: 100%;"{% endif %}
+       loading="lazy">
+  {% if include.caption %}
+    <figcaption class="image-caption">{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

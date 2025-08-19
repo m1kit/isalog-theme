@@ -2,8 +2,6 @@
 
 *isalog is a dark Jekyll theme for blogs, forked from the Cayman theme. You can [use it today](#usage) for your Jekyll blog.*
 
-![Thumbnail of isalog](thumbnail.png)
-
 ## Usage
 
 To use the isalog theme:

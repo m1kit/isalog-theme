@@ -1,0 +1,55 @@
+{% comment %}
+  Responsive video embed include
+  Usage: {% include video.html src="https://youtube.com/watch?v=..." title="Video Title" %}
+  
+  Parameters:
+  - src (required): Video URL (YouTube, Vimeo, or direct video file)
+  - title (optional): Video title for accessibility
+  - width (optional): Custom width (default: 100%)
+  - height (optional): Custom height (maintains aspect ratio if not set)
+  - autoplay (optional): Enable autoplay (default: false)
+  - poster (optional): Poster image for video files
+{% endcomment %}
+
+{% assign video_title = include.title | default: "Embedded Video" %}
+{% assign video_width = include.width | default: "100%" %}
+{% assign autoplay_param = include.autoplay | default: false %}
+
+{% if include.src contains "youtube.com" or include.src contains "youtu.be" %}
+  <!-- YouTube embed -->
+  {% if include.src contains "youtu.be" %}
+    {% assign video_id = include.src | split: "/" | last %}
+  {% else %}
+    {% assign video_id = include.src | split: "v=" | last | split: "&" | first %}
+  {% endif %}
+  
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/{{ video_id }}{% if autoplay_param %}?autoplay=1{% else %}?rel=0{% endif %}" 
+      title="{{ video_title }}"
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+{% elsif include.src contains "vimeo.com" %}
+  <!-- Vimeo embed -->
+  {% assign video_id = include.src | split: "/" | last %}
+  
+  <div class="video-container">
+    <iframe 
+      src="https://player.vimeo.com/video/{{ video_id }}{% if autoplay_param %}?autoplay=1{% endif %}" 
+      title="{{ video_title }}"
+      frameborder="0" 
+      allow="autoplay; fullscreen; picture-in-picture" 
+      loading="lazy">
+    </iframe>
+  </div>
+
+
+{% endif %}
+
+{% if include.title %}
+  <p class="video-caption">{{ include.title }}</p>
+{% endif %}

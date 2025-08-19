@@ -50,19 +50,11 @@ class WireframeAnimation {
         // Create triangular grid
         this.createGrid(rect.width / rect.height);
         
-        // Add to header (preserve existing positioning from CSS)
+        // Add to header (static styles are handled by CSS)
         header.appendChild(this.renderer.domElement);
         
-        // Style canvas
-        Object.assign(this.renderer.domElement.style, {
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            width: '100%',
-            height: '100%',
-            pointerEvents: 'none',
-            zIndex: '1'
-        });
+        // Set pointer-events via JS to avoid W3C CSS validation error
+        this.renderer.domElement.style.pointerEvents = 'none';
     }
     
     private createGrid(aspectRatio: number): void {
@@ -208,17 +200,13 @@ class WireframeAnimation {
         const originalStyles = {
             height: header.style.height,
             paddingTop: header.style.paddingTop,
-            paddingBottom: header.style.paddingBottom,
-            borderBottomLeftRadius: header.style.borderBottomLeftRadius,
-            borderBottomRightRadius: header.style.borderBottomRightRadius
+            paddingBottom: header.style.paddingBottom
         };
         
         // Clear scroll-applied styles
         header.style.height = '';
         header.style.paddingTop = '';
         header.style.paddingBottom = '';
-        header.style.borderBottomLeftRadius = '';
-        header.style.borderBottomRightRadius = '';
         
         // Store the natural height of the header
         this.originalHeight = header.getBoundingClientRect().height;
@@ -232,8 +220,6 @@ class WireframeAnimation {
         header.style.height = originalStyles.height;
         header.style.paddingTop = originalStyles.paddingTop;
         header.style.paddingBottom = originalStyles.paddingBottom;
-        header.style.borderBottomLeftRadius = originalStyles.borderBottomLeftRadius;
-        header.style.borderBottomRightRadius = originalStyles.borderBottomRightRadius;
     }
 
     private handleScrollFade(): void {
@@ -267,11 +253,6 @@ class WireframeAnimation {
         const minPaddingEm = 1; // 1em minimum
         const targetPaddingEm = originalPaddingEm * (1 - progress) + minPaddingEm * progress;
         
-        // Calculate corner radius in em units (16px from SCSS = 1em)
-        const originalRadiusEm = 1; // 16px = 1em
-        const minRadiusEm = 0; // No radius when scrolled
-        const targetRadiusEm = originalRadiusEm * (1 - progress) + minRadiusEm * progress;
-        
         // Calculate background opacity (1.0 to 0.8)
         const originalOpacity = 1.0;
         const minOpacity = 0.8;
@@ -282,8 +263,6 @@ class WireframeAnimation {
             header.style.height = `${targetHeightEm}em`;
             header.style.paddingTop = `${targetPaddingEm}em`;
             header.style.paddingBottom = `${targetPaddingEm}em`;
-            header.style.borderBottomLeftRadius = `${targetRadiusEm}em`;
-            header.style.borderBottomRightRadius = `${targetRadiusEm}em`;
             header.style.opacity = targetBgOpacity.toString();
             header.style.overflow = 'hidden';
             header.style.boxSizing = 'border-box';

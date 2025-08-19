@@ -1,0 +1,36 @@
+{% comment %}
+  Alert/Callout include for highlighting important information
+  Usage: {% include alert.html type="info" title="Note" content="This is important information." %}
+  
+  Parameters:
+  - type (optional): info, warning, success, danger (default: info)
+  - title (optional): Alert title/heading
+  - content (required): Alert content/message
+  - icon (optional): Custom icon (defaults based on type)
+{% endcomment %}
+
+{% assign alert_type = include.type | default: "info" %}
+{% assign alert_icons = "info:ℹ️,warning:⚠️,success:✅,danger:❌" | split: "," %}
+{% assign default_icon = "ℹ️" %}
+
+{% for icon_pair in alert_icons %}
+  {% assign pair = icon_pair | split: ":" %}
+  {% if pair[0] == alert_type %}
+    {% assign default_icon = pair[1] %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% assign alert_icon = include.icon | default: default_icon %}
+
+<div class="alert alert-{{ alert_type }}">
+  <div class="alert-header">
+    <span class="alert-icon">{{ alert_icon }}</span>
+    {% if include.title %}
+      <span class="alert-title">{{ include.title }}</span>
+    {% endif %}
+  </div>
+  <div class="alert-content">
+    {{ include.content | markdownify }}
+  </div>
+</div>

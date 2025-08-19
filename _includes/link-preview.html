@@ -1,0 +1,41 @@
+{% comment %}
+  Link preview card for external links
+  Usage: {% include link-preview.html url="https://example.com" title="Site Title" description="Description" image="/path/to/image.jpg" %}
+  
+  Parameters:
+  - url (required): The target URL
+  - title (required): Link title
+  - description (optional): Brief description
+  - image (optional): Preview image
+  - domain (optional): Domain name (auto-extracted if not provided)
+{% endcomment %}
+
+{% assign link_domain = include.domain %}
+{% unless link_domain %}
+  {% assign url_parts = include.url | split: "//" %}
+  {% assign domain_part = url_parts[1] | split: "/" | first %}
+  {% assign link_domain = domain_part | split: "www." | last %}
+{% endunless %}
+
+<div class="link-preview">
+  <a href="{{ include.url }}" target="_blank" rel="noopener noreferrer" class="link-preview-content">
+    {% if include.image %}
+      <div class="link-preview-image">
+        <img src="{{ include.image }}" alt="{{ include.title }}" loading="lazy">
+      </div>
+    {% endif %}
+    
+    <div class="link-preview-text">
+      <h4 class="link-preview-title">{{ include.title }}</h4>
+      
+      {% if include.description %}
+        <p class="link-preview-description">{{ include.description }}</p>
+      {% endif %}
+      
+      <div class="link-preview-meta">
+        <span class="link-preview-domain">{{ link_domain }}</span>
+        <span class="link-preview-external">↗</span>
+      </div>
+    </div>
+  </a>
+</div>
