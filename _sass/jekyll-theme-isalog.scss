@@ -1,22 +1,21 @@
-@use "sass:color";
-@use "normalize";
-@use "rouge-github";
-@use "variables";
+@import "normalize";
+@import "rouge-github";
+@import "variables";
 
 @mixin large {
-  @media screen and (min-width: #{variables.$large-breakpoint}) {
+  @media screen and (min-width: #{$large-breakpoint}) {
     @content;
   }
 }
 
 @mixin medium {
-  @media screen and (min-width: #{variables.$medium-breakpoint}) and (max-width: #{variables.$large-breakpoint}) {
+  @media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint}) {
     @content;
   }
 }
 
 @mixin small {
-  @media screen and (max-width: #{variables.$medium-breakpoint}) {
+  @media screen and (max-width: #{$medium-breakpoint}) {
     @content;
   }
 }
@@ -31,7 +30,7 @@ body {
   font-family: "Open Sans", "Kosugi", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: variables.$body-text-color;
+  color: $body-text-color;
   background-color: #263238;
 }
 
@@ -48,13 +47,13 @@ body {
     left: 10px;
     height: auto;
     width: auto;
-    background: color.invert(variables.$body-link-color);
-    outline: thick solid color.invert(variables.$body-link-color);
+    background: invert($body-link-color);
+    outline: thick solid invert($body-link-color);
   }
 }
 
 a {
-  color: variables.$body-link-color;
+  color: $body-link-color;
   text-decoration: none;
 
   &:hover {
@@ -107,10 +106,10 @@ a {
 }
 
 .page-header {
-  color: variables.$header-heading-color;
+  color: $header-heading-color;
   text-align: center;
-  background-color: variables.$header-bg-color;
-  background-image: linear-gradient(120deg, variables.$header-bg-color-secondary, variables.$header-bg-color);
+  background-color: $header-bg-color;
+  background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 16px;
@@ -354,7 +353,7 @@ a {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: normal;
-    color: variables.$section-headings-color;
+    color: $section-headings-color;
     font-family: "Zen Maru Gothic", sans-serif;
   }
 
@@ -366,8 +365,8 @@ a {
     padding: 2px 4px;
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-size: 0.9rem;
-    color: variables.$code-text-color;
-    background-color: variables.$code-bg-color;
+    color: $code-text-color;
+    background-color: $code-bg-color;
     border-radius: 0.3rem;
   }
 
@@ -376,17 +375,17 @@ a {
     margin-top: 0;
     margin-bottom: 1rem;
     font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    color: variables.$code-text-color;
+    color: $code-text-color;
     word-wrap: normal;
-    background-color: variables.$code-bg-color;
-    border: solid 1px variables.$border-color;
+    background-color: $code-bg-color;
+    border: solid 1px $border-color;
     border-radius: 0.3rem;
 
     > code {
       padding: 0;
       margin: 0;
       font-size: 0.9rem;
-      color: variables.$code-text-color;
+      color: $code-text-color;
       word-break: normal;
       white-space: pre;
       background: transparent;
@@ -439,8 +438,8 @@ a {
   blockquote {
     padding: 0 1rem;
     margin-left: 0;
-    color: variables.$blockquote-text-color;
-    border-left: 0.3rem solid variables.$border-color;
+    color: $blockquote-text-color;
+    border-left: 0.3rem solid $border-color;
 
     > :first-child {
       margin-top: 0;
@@ -466,7 +465,7 @@ a {
     th,
     td {
       padding: 0.5rem 1rem;
-      border: 1px solid variables.$table-border-color;
+      border: 1px solid $table-border-color;
     }
   }
 
@@ -490,7 +489,7 @@ a {
     height: 2px;
     padding: 0;
     margin: 1rem 0;
-    background-color: variables.$hr-border-color;
+    background-color: $hr-border-color;
     border: 0;
   }
 }
@@ -498,7 +497,7 @@ a {
 .site-footer {
   padding-top: 2rem;
   margin-top: 2rem;
-  border-top: solid 1px variables.$hr-border-color;
+  border-top: solid 1px $hr-border-color;
 
   @include large {
     font-size: 1rem;
@@ -519,7 +518,7 @@ a {
 }
 
 .site-footer-credits {
-  color: variables.$blockquote-text-color;
+  color: $blockquote-text-color;
 }
 
 // Blog post list styles
@@ -530,7 +529,7 @@ a {
 .post-item {
   margin-bottom: 1.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid variables.$border-color;
+  border-bottom: 1px solid $border-color;
 
   &:last-child {
     border-bottom: none;
@@ -542,7 +541,7 @@ a {
   margin-bottom: 0.5rem;
 
   a {
-    color: variables.$section-headings-color;
+    color: $section-headings-color;
     text-decoration: none;
     font-size: 1.4rem;
 
@@ -555,7 +554,7 @@ a {
 .post-meta {
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: variables.$blockquote-text-color;
+  color: $blockquote-text-color;
 
   time {
     font-weight: 500;
@@ -570,7 +569,7 @@ a {
 .post-excerpt {
   margin-bottom: 1rem;
   line-height: 1.6;
-  color: variables.$body-text-color;
+  color: $body-text-color;
 }
 
 .post-tags {
@@ -582,7 +581,7 @@ a {
     display: inline-block;
     padding: 0.2rem 0.6rem;
     background-color: rgba(100, 181, 246, 0.1);
-    color: variables.$body-link-color;
+    color: $body-link-color;
     border-radius: 0.3rem;
     font-size: 0.8rem;
     border: 1px solid rgba(100, 181, 246, 0.2);
@@ -605,15 +604,15 @@ a {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background-color: transparent;
-    color: variables.$body-link-color;
-    border: 2px solid variables.$body-link-color;
+    color: $body-link-color;
+    border: 2px solid $body-link-color;
     border-radius: 0.3rem;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
 
     &:hover {
-      background-color: variables.$body-link-color;
+      background-color: $body-link-color;
       color: #263238;
       text-decoration: none;
     }
@@ -623,15 +622,15 @@ a {
 .no-posts {
   text-align: center;
   padding: 3rem 2rem;
-  color: variables.$blockquote-text-color;
+  color: $blockquote-text-color;
 
   p {
     margin-bottom: 1rem;
   }
 
   code {
-    background-color: variables.$code-bg-color;
-    color: variables.$code-text-color;
+    background-color: $code-bg-color;
+    color: $code-text-color;
     padding: 0.2rem 0.4rem;
     border-radius: 0.2rem;
     font-size: 0.9rem;
@@ -646,13 +645,13 @@ a {
 .post-header {
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid variables.$border-color;
+  border-bottom: 1px solid $border-color;
 }
 
 .post-title {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: variables.$section-headings-color;
+  color: $section-headings-color;
   font-family: "Zen Maru Gothic", sans-serif;
   
   @include large {
@@ -683,12 +682,12 @@ a {
 
 .post-date {
   font-weight: 600;
-  color: variables.$body-link-color;
+  color: $body-link-color;
   font-size: 1rem;
 }
 
 .post-author {
-  color: variables.$blockquote-text-color;
+  color: $blockquote-text-color;
   font-size: 0.95rem;
 }
 
@@ -709,13 +708,13 @@ a {
   blockquote {
     margin: 2rem 0;
     padding: 1rem 1.5rem;
-    border-left: 4px solid variables.$body-link-color;
+    border-left: 4px solid $body-link-color;
     background-color: rgba(100, 181, 246, 0.05);
   }
 }
 
 .post-footer {
-  border-top: 1px solid variables.$border-color;
+  border-top: 1px solid $border-color;
   padding-top: 2rem;
 }
 
@@ -754,7 +753,7 @@ a {
 .nav-label {
   display: block;
   font-size: 0.8rem;
-  color: variables.$blockquote-text-color;
+  color: $blockquote-text-color;
   margin-bottom: 0.3rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -762,7 +761,7 @@ a {
 
 .nav-title {
   display: block;
-  color: variables.$body-link-color;
+  color: $body-link-color;
   font-weight: 500;
   line-height: 1.3;
 }
@@ -774,8 +773,8 @@ a {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background-color: transparent;
-    color: variables.$blockquote-text-color;
-    border: 1px solid variables.$border-color;
+    color: $blockquote-text-color;
+    border: 1px solid $border-color;
     border-radius: 0.3rem;
     text-decoration: none;
     font-size: 0.9rem;
@@ -783,8 +782,8 @@ a {
 
     &:hover {
       background-color: rgba(100, 181, 246, 0.1);
-      border-color: variables.$body-link-color;
-      color: variables.$body-link-color;
+      border-color: $body-link-color;
+      color: $body-link-color;
       text-decoration: none;
     }
   }
@@ -799,13 +798,13 @@ a {
   margin-bottom: 3rem;
   text-align: center;
   padding-bottom: 2rem;
-  border-bottom: 1px solid variables.$border-color;
+  border-bottom: 1px solid $border-color;
 }
 
 .tag-title {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: variables.$section-headings-color;
+  color: $section-headings-color;
   
   @include large {
     font-size: 2.2rem;
@@ -821,7 +820,7 @@ a {
 }
 
 .tag-description {
-  color: variables.$blockquote-text-color;
+  color: $blockquote-text-color;
   font-size: 1.1rem;
   margin-bottom: 0;
 }
@@ -833,7 +832,7 @@ a {
 .tag-post-item {
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid variables.$border-color;
+  border-bottom: 1px solid $border-color;
 
   &:last-child {
     border-bottom: none;
@@ -845,7 +844,7 @@ a {
   margin-bottom: 0.5rem;
 
   a {
-    color: variables.$section-headings-color;
+    color: $section-headings-color;
     text-decoration: none;
     font-size: 1.5rem;
 
@@ -858,11 +857,11 @@ a {
 .tag-post-meta {
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: variables.$blockquote-text-color;
+  color: $blockquote-text-color;
 
   time {
     font-weight: 500;
-    color: variables.$body-link-color;
+    color: $body-link-color;
   }
 
   .tag-post-author {
@@ -874,7 +873,7 @@ a {
 .tag-post-excerpt {
   margin-bottom: 1rem;
   line-height: 1.6;
-  color: variables.$body-text-color;
+  color: $body-text-color;
 }
 
 .tag-post-tags {
@@ -895,7 +894,7 @@ a {
   gap: 1rem;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid variables.$border-color;
+  border-top: 1px solid $border-color;
 
   @include small {
     flex-direction: column;
@@ -906,15 +905,15 @@ a {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     background-color: transparent;
-    color: variables.$body-link-color;
-    border: 2px solid variables.$body-link-color;
+    color: $body-link-color;
+    border: 2px solid $body-link-color;
     border-radius: 0.3rem;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.2s ease;
 
     &:hover {
-      background-color: variables.$body-link-color;
+      background-color: $body-link-color;
       color: #263238;
       text-decoration: none;
     }
@@ -959,14 +958,14 @@ a {
 .tag-name {
   display: block;
   font-weight: 600;
-  color: variables.$body-link-color;
+  color: $body-link-color;
   font-size: 1.1rem;
   margin-bottom: 0.3rem;
 }
 
 .tag-count {
   display: block;
-  color: variables.$blockquote-text-color;
+  color: $blockquote-text-color;
   font-size: 0.9rem;
 }
 
@@ -1009,14 +1008,14 @@ a {
 .popular-tag-name {
   display: block;
   font-weight: 700;
-  color: variables.$body-link-color;
+  color: $body-link-color;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 
 .popular-tag-count {
   display: block;
-  color: variables.$blockquote-text-color;
+  color: $blockquote-text-color;
   font-size: 1rem;
   margin-bottom: 1rem;
 }
@@ -1028,7 +1027,7 @@ a {
 }
 
 .sample-post {
-  color: variables.$body-text-color;
+  color: $body-text-color;
   font-size: 0.9rem;
   opacity: 0.8;
   padding: 0.2rem 0;
@@ -1037,7 +1036,7 @@ a {
   
   &:before {
     content: "→ ";
-    color: variables.$body-link-color;
+    color: $body-link-color;
     opacity: 0.6;
   }
 }
@@ -1046,5 +1045,5 @@ a {
   text-align: center;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid variables.$border-color;
+  border-top: 1px solid $border-color;
 }

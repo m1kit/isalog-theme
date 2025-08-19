@@ -49,7 +49,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Vite build outputs
-assets/dist/
+
 dist/
 .vite/
 
