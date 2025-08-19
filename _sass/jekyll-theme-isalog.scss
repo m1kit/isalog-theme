@@ -24,6 +24,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 8rem; // Account for fixed header height
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -108,8 +112,8 @@ a {
 .page-header {
   color: $header-heading-color;
   text-align: center;
-  background-color: $header-bg-color;
-  background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  --header-alpha: 1;
+  background-image: linear-gradient(120deg, #{rgba($header-bg-color-secondary, var(--header-alpha))}, #{rgba($header-bg-color, var(--header-alpha))});
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 16px;

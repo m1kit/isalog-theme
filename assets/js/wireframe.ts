@@ -157,12 +157,6 @@ class WireframeAnimation {
         // On non-home pages, pass time=0 to disable automatic animations
         const elapsedTime = this.isHomePage ? (Date.now() - this.startTime) * 0.001 : 0;
         
-        // Debug: Check for NaN or invalid values
-        if (isNaN(elapsedTime) || !isFinite(elapsedTime)) {
-            console.error('Time is NaN or invalid:', elapsedTime);
-            return;
-        }
-        
         material.uniforms.time.value = elapsedTime;
         
         // Animate base opacity
@@ -255,22 +249,15 @@ class WireframeAnimation {
         
         // Calculate background opacity (1.0 to 0.8)
         const originalOpacity = 1.0;
-        const minOpacity = 0.8;
+        const minOpacity = 0.85;
         const targetBgOpacity = originalOpacity * (1 - progress) + minOpacity * progress;
 
-        // Shrink header height, padding, corner radius, and opacity
+        // Shrink header height, padding, and background opacity
         if (header) {
             header.style.height = `${targetHeightEm}em`;
             header.style.paddingTop = `${targetPaddingEm}em`;
             header.style.paddingBottom = `${targetPaddingEm}em`;
-            header.style.opacity = targetBgOpacity.toString();
-            header.style.overflow = 'hidden';
-            header.style.boxSizing = 'border-box';
-            
-            // Keep h1 title fully opaque
-            if (title) {
-                title.style.opacity = '1';
-            }
+            header.style.setProperty('--header-alpha', targetBgOpacity.toString());
         }
     }
 
