@@ -50,7 +50,7 @@ yarn-error.log*
 
 # Vite build outputs
 
-dist/
+
 .vite/
 
 # TypeScript
