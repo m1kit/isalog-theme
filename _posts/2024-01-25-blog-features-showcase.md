@@ -14,6 +14,12 @@ The theme provides beautiful image handling with captions and hover effects:
 
 {% include image.html src="/assets/images/snow_mountain.jpg" alt="Beautiful Snow Mountain in Hokkaido, Japan" caption="Stunning winter landscape from Hokkaido, Japan - showcasing how the theme handles landscape photography with elegant styling and responsive behavior." %}
 
+### Responsive Images with Srcset
+
+The theme also supports responsive images using srcset for optimized loading across different screen sizes:
+
+{% include imageset.html src="snow_mountain" alt="Beautiful Snow Mountain with Responsive Loading" caption="Same beautiful mountain landscape, but now with responsive srcset loading - automatically serves appropriately sized images for small (480w), medium (800w), and large (1200w) screens." %}
+
 ## 🚨 Alert Components
 
 Use different alert types to highlight important information throughout your posts:

@@ -12,7 +12,7 @@
   Images should be placed at /img/<image_name>_<size>.webp where size is s, m, l
 {% endcomment %}
 
-<figure class="image-figure{% if include.class %} {{ include.class }}{% endif %}"{% if include.width %} style="max-width: {{ include.width }};{% endif %}">
+<figure class="image-figure{% if include.class %} {{ include.class }}{% endif %}"{% if include.width %} style="max-width: {{ include.width }};"{% endif %}>
   <img src="{{ '/img/' | append: include.src | append: '_m.webp' | relative_url }}" 
        srcset="{{ '/img/' | append: include.src | append: '_s.webp' | relative_url }} 480w,
                {{ '/img/' | append: include.src | append: '_m.webp' | relative_url }} 800w,
