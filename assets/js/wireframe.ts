@@ -134,9 +134,11 @@ class WireframeAnimation {
         });
 
         // Add scroll listener for subtitle fade effect
-        window.addEventListener('scroll', () => {
-            this.handleScrollFade();
-        });
+        if (!this.isHomePage) {
+            window.addEventListener('scroll', () => {
+                this.handleScrollFade();
+            });
+        }
     }
     
     private animate(): void {
