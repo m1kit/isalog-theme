@@ -2,7 +2,7 @@ title: isalog theme
 description: isalog is a clean, responsive dark theme for Jekyll blogs.
 show_downloads: false
 google_analytics:
-theme: jekyll-theme-isalog
+safe: true
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
