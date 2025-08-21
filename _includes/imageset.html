@@ -8,18 +8,18 @@
   - caption (optional): Caption text displayed below image
   - class (optional): Additional CSS classes for styling
   - width (optional): Max width constraint
+  - small (optional): If set, makes image 60% of normal size
   
   Images should be placed at /img/<image_name>_<size>.webp where size is s, m, l
 {% endcomment %}
 
-<figure class="image-figure{% if include.class %} {{ include.class }}{% endif %}"{% if include.width %} style="max-width: {{ include.width }};"{% endif %}>
+<figure class="image-figure{% if include.class %} {{ include.class }}{% endif %}{% if include.small %} fig-small{% endif %}"{% if include.width %} style="max-width: {{ include.width }};"{% endif %}>
   <img src="{{ '/img/' | append: include.src | append: '_m.webp' | relative_url }}" 
        srcset="{{ '/img/' | append: include.src | append: '_s.webp' | relative_url }} 480w,
                {{ '/img/' | append: include.src | append: '_m.webp' | relative_url }} 800w,
                {{ '/img/' | append: include.src | append: '_l.webp' | relative_url }} 1200w"
        sizes="(max-width: 480px) 100vw, (max-width: 800px) 800px, 1200px"
        alt="{{ include.alt }}"
-       {% if include.width %}style="max-width: 100%;"{% endif %}
        loading="lazy">
   {% if include.caption %}
     <figcaption class="image-caption">{{ include.caption }}</figcaption>

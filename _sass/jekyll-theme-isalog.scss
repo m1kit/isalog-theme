@@ -383,6 +383,8 @@ a {
       border-radius: 0.5rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease;
+      max-height: 70vh;
+      width: auto;
       
       &:hover {
         transform: scale(1.02);
@@ -398,6 +400,11 @@ a {
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+    }
+    
+    &.fig-small img {
+      max-width: 600%;
+      max-height: 48vh;
     }
   }
 
@@ -1190,63 +1197,6 @@ a {
   display: block;
   color: $blockquote-text-color;
   font-size: 0.9rem;
-}
-
-.popular-tags {
-  margin: 3rem 0;
-  display: grid;
-  gap: 1.5rem;
-  
-  @include medium {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  }
-}
-
-.popular-tag {
-  background-color: rgba(100, 181, 246, 0.05);
-  border: 1px solid rgba(100, 181, 246, 0.15);
-  border-radius: 0.75rem;
-  overflow: hidden;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color: rgba(100, 181, 246, 0.1);
-    border-color: rgba(100, 181, 246, 0.3);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(100, 181, 246, 0.15);
-  }
-}
-
-.popular-tag-link {
-  display: block;
-  padding: 1.5rem;
-  text-decoration: none;
-  color: inherit;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.popular-tag-name {
-  display: block;
-  font-weight: 700;
-  color: $body-link-color;
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.popular-tag-count {
-  display: block;
-  color: $blockquote-text-color;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
-.popular-tag-preview {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
 }
 
 .sample-post {

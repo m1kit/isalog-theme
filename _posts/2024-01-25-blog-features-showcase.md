@@ -20,6 +20,8 @@ The theme also supports responsive images using srcset for optimized loading acr
 
 {% include imageset.html src="snow_mountain" alt="Beautiful Snow Mountain with Responsive Loading" caption="Same beautiful mountain landscape, but now with responsive srcset loading - automatically serves appropriately sized images for small (480w), medium (800w), and large (1200w) screens." %}
 
+{% include imageset.html src="37whkk1g" small=1 alt="Yet another snow mountain." %}
+
 ## 🚨 Alert Components
 
 Use different alert types to highlight important information throughout your posts:
