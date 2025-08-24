@@ -22,7 +22,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        wireframe: './assets/js/wireframe.ts',
+        anim: './assets/js/anim.ts',
       },
       output: {
         entryFileNames: '[name].js',

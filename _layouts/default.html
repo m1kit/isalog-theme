@@ -4,13 +4,28 @@
     <meta charset="UTF-8">
 
 {% seo %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Kosugi&family=Zen+Maru+Gothic:wght@400;700&display=swap">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap">
+    <script>
+      try {
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        const lowSpeedTypes = ['slow-2g', '2g', '3g', '4g'];
+        if (connection && !connection.saveData && !lowSpeedTypes.includes(connection.effectiveType)) {
+          const fontUrl = 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Kosugi&display=swap';
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = fontUrl;
+          document.head.appendChild(link);
+        }
+      } catch (e) {}
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    <script src="{{ '/assets/dist/wireframe.js' | relative_url }}"></script>
+    <script src="{{ '/assets/dist/anim.js' | relative_url }}" defer></script>
     {% include head-custom.html %}
   </head>
   <body>

@@ -7,7 +7,7 @@ interface MousePosition {
     y: number;
 }
 
-class WireframeAnimation {
+class Animation {
     private scene: THREE.Scene | null = null;
     private camera: THREE.PerspectiveCamera | null = null;
     private renderer: THREE.WebGLRenderer | null = null;
@@ -53,6 +53,15 @@ class WireframeAnimation {
         // Add to header (static styles are handled by CSS)
         header.appendChild(this.renderer.domElement);
         
+        // Fade in canvas
+        this.renderer.domElement.style.opacity = '0';
+        requestAnimationFrame(() => {
+            if (this.renderer) {
+                this.renderer.domElement.style.transition = 'opacity 1s ease-in-out';
+                this.renderer.domElement.style.opacity = '1';
+            }
+        });
+
         // Set pointer-events via JS to avoid W3C CSS validation error
         this.renderer.domElement.style.pointerEvents = 'none';
     }
@@ -266,4 +275,4 @@ class WireframeAnimation {
 }
 
 // Initialize
-document.addEventListener('DOMContentLoaded', () => new WireframeAnimation());
+document.addEventListener('DOMContentLoaded', () => new Animation());
